@@ -1,0 +1,13 @@
+# github.com/beevik/etree v1.1.0
+## explicit
+github.com/beevik/etree
+# github.com/gorilla/mux v1.8.0
+## explicit
+github.com/gorilla/mux
+# golang.org/x/text v0.3.3
+## explicit
+golang.org/x/text/encoding
+golang.org/x/text/encoding/charmap
+golang.org/x/text/encoding/internal
+golang.org/x/text/encoding/internal/identifier
+golang.org/x/text/transform
