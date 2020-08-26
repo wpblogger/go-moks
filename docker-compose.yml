@@ -1,22 +1,22 @@
-version: "3"
+version: '3'
 services:
     go_other_mocks:
-    hostname: ${HOSTNAME}_go_other_mocks
-    container_name: ${COMPOSE_PROJECT_NAME}
-    image: ${REGISTRY_ADDRESS}/${COMPOSE_PROJECT_NAME}:${GO_OTHER_MOCKS}
-    env_file:
-      - .env
-    ports:
-      - "${GO_OTHER_MOCKS_PORT}:8080"
-    networks:
-      - go_other_mocks
-    environment:
-      - "PS1=$$(whoami)@$$(hostname):$$(pwd) $$ "
-    logging:
-      driver: "gelf"
-      options:
-        gelf-address: "udp://${GRAYLOG_HOST}:${GRAYLOG_PORT}"
-        tag: "${HOSTNAME}"
+      hostname: ${HOSTNAME}_go_other_mocks
+      container_name: ${COMPOSE_PROJECT_NAME}
+      image: ${REGISTRY_ADDRESS}/${COMPOSE_PROJECT_NAME}:${GO_OTHER_MOCKS_BRANCH}
+      ports:
+        - "${GO_OTHER_MOCKS_PORT}:8080"
+      env_file:
+        - .env
+      environment:
+        - "PS1=$$(whoami)@$$(hostname):$$(pwd) $$ "
+      networks:
+        - go_other_mocks
+      logging:
+        driver: "gelf"
+        options:
+          gelf-address: "udp://${GRAYLOG_HOST}:${GRAYLOG_PORT}"
+          tag: "${HOSTNAME}"
 
 networks:
   go_other_mocks:
