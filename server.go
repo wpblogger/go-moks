@@ -93,12 +93,12 @@ func getVersion(w http.ResponseWriter, r *http.Request, branch string) {
 
 func main() {
 	listenPort := "8080"
-	if len(os.Getenv("PORT")) > 0 {
-		listenPort = os.Getenv("PORT")
+	if len(os.Getenv("GO_OTHER_MOCKS_PORT")) > 0 {
+		listenPort = os.Getenv("GO_OTHER_MOCKS_PORT")
 	}
 	var branch string
-	if len(os.Getenv("BRANCH")) > 0 {
-		branch = os.Getenv("BRANCH")
+	if len(os.Getenv("GO_OTHER_MOCK_BRANCH")) > 0 {
+		branch = os.Getenv("GO_OTHER_MOCK_BRANCH")
 	}
 	log.Print("App start on port ", listenPort)
 	r := mux.NewRouter()
