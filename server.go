@@ -97,8 +97,8 @@ func main() {
 		listenPort = os.Getenv("GO_OTHER_MOCKS_PORT")
 	}
 	var branch string
-	if len(os.Getenv("GO_OTHER_MOCK_BRANCH")) > 0 {
-		branch = os.Getenv("GO_OTHER_MOCK_BRANCH")
+	if len(os.Getenv("GO_OTHER_MOCKS_BRANCH")) > 0 {
+		branch = os.Getenv("GO_OTHER_MOCKS_BRANCH")
 	}
 	log.Print("App start on port ", listenPort)
 	r := mux.NewRouter()
