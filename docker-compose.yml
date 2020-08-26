@@ -5,7 +5,7 @@ services:
       container_name: ${COMPOSE_PROJECT_NAME}
       image: ${REGISTRY_ADDRESS}/${COMPOSE_PROJECT_NAME}:${GO_OTHER_MOCKS_BRANCH}
       ports:
-        - "${GO_OTHER_MOCKS_PORT}:8080"
+        - "${GO_OTHER_MOCKS_PORT}:${GO_OTHER_MOCKS_PORT}"
       env_file:
         - .env
       environment:
