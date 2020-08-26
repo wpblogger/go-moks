@@ -1,5 +1,8 @@
 FROM golang:1.14.6-alpine3.12 AS builder
 
+ARG BRANCH
+ENV BRANCH $BRANCH
+
 RUN mkdir /app 
 ADD . /app/ 
 WORKDIR /app
