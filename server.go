@@ -19,7 +19,7 @@ func getCrv(w http.ResponseWriter, r *http.Request) {
 	var outStr string
 	inBody, _ := ioutil.ReadAll(r.Body)
 	defer r.Body.Close()
-	strBody := string(inBody)
+	strBody, _ := toUtf8(string(inBody))
 	log.Print(strings.Replace(strBody, "\n", "", -1))
 
 	doc := etree.NewDocument()
