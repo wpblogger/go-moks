@@ -19,9 +19,11 @@ func getCrv(w http.ResponseWriter, r *http.Request) {
 	var outStr string
 	inBody, _ := ioutil.ReadAll(r.Body)
 	defer r.Body.Close()
+	strBody := string(inBody)
+	log.Print(strings.Replace(strBody, "\n", "", -1))
 
 	doc := etree.NewDocument()
-	_ = doc.ReadFromString(string(inBody))
+	_ = doc.ReadFromString(strBody)
 	root := doc.SelectElement("CRV")
 
 	docOut := etree.NewDocument()
@@ -36,8 +38,10 @@ func getCrv(w http.ResponseWriter, r *http.Request) {
 	lastName.CreateText(root.SelectElement("LastName").Text())
 	firstName := requestElm.CreateElement("FirstName")
 	firstName.CreateText(root.SelectElement("FirstName").Text())
-	middleName := requestElm.CreateElement("MiddleName")
-	middleName.CreateText(root.SelectElement("MiddleName").Text())
+	if inMiddleName := root.SelectElement("MiddleName"); inMiddleName != nil {
+		middleName := requestElm.CreateElement("MiddleName")
+		middleName.CreateText(root.SelectElement("MiddleName").Text())
+	}
 	passport := requestElm.CreateElement("Passport")
 	passport.CreateText(root.SelectElement("Passport").Text())
 	phone := requestElm.CreateElement("Phone")
