@@ -1,9 +1,25 @@
+# github.com/andybalholm/brotli v1.0.0
+github.com/andybalholm/brotli
 # github.com/beevik/etree v1.1.0
 ## explicit
 github.com/beevik/etree
-# github.com/gorilla/mux v1.8.0
+# github.com/fasthttp/router v1.3.2
 ## explicit
-github.com/gorilla/mux
+github.com/fasthttp/router
+github.com/fasthttp/router/radix
+# github.com/klauspost/compress v1.10.7
+github.com/klauspost/compress/flate
+github.com/klauspost/compress/gzip
+github.com/klauspost/compress/zlib
+# github.com/savsgio/gotils v0.0.0-20200616100644-13ff1fd2c28c
+github.com/savsgio/gotils
+# github.com/valyala/bytebufferpool v1.0.0
+github.com/valyala/bytebufferpool
+# github.com/valyala/fasthttp v1.16.0
+## explicit
+github.com/valyala/fasthttp
+github.com/valyala/fasthttp/fasthttputil
+github.com/valyala/fasthttp/stackless
 # golang.org/x/text v0.3.3
 ## explicit
 golang.org/x/text/encoding

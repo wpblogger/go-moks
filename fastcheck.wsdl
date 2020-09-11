@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mbtc.ru/fas/definitions" xmlns:schema="http://mbtc.ru/fas" xmlns:tns="http://mbtc.ru/fas/definitions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import schemaLocation="/ws/service?xsd" namespace="http://mbtc.ru/fas"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="fasRequest">
+		<wsdl:part name="fasRequest" element="schema:fasRequest"/>
+	</wsdl:message>
+	<wsdl:message name="fasResponse">
+		<wsdl:part name="fasResponse" element="schema:fasResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="request">
+		<wsdl:operation name="request">
+			<wsdl:input name="fasRequest" message="tns:fasRequest"/>
+			<wsdl:output name="fasResponse" message="tns:fasResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding type="tns:request" name="requestBinding">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+		<wsdl:operation name="request">
+			<soap:operation soapAction="http://mbtc.ru/fas/request"/>
+			<wsdl:input name="fasRequest">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="fasResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="requestService">
+		<wsdl:port name="requestBindingPort" binding="tns:requestBinding">
+			<soap:address location="/ws/service"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
