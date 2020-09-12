@@ -11,6 +11,9 @@ github.com/fasthttp/router/radix
 github.com/klauspost/compress/flate
 github.com/klauspost/compress/gzip
 github.com/klauspost/compress/zlib
+# github.com/recoilme/pudge v1.0.3
+## explicit
+github.com/recoilme/pudge
 # github.com/savsgio/gotils v0.0.0-20200616100644-13ff1fd2c28c
 github.com/savsgio/gotils
 # github.com/valyala/bytebufferpool v1.0.0
@@ -20,6 +23,9 @@ github.com/valyala/bytebufferpool
 github.com/valyala/fasthttp
 github.com/valyala/fasthttp/fasthttputil
 github.com/valyala/fasthttp/stackless
+# github.com/valyala/fasttemplate v1.2.1
+## explicit
+github.com/valyala/fasttemplate
 # golang.org/x/text v0.3.3
 ## explicit
 golang.org/x/text/encoding

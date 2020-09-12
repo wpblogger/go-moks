@@ -12,4 +12,6 @@ FROM alpine:3.11
 WORKDIR /
 
 COPY --from=builder /app/server /server
+COPY --from=builder /app/fastcheck.wsdl /fastcheck.wsdl
+COPY --from=builder /app/fastcheck.xsd /fastcheck.xsd
 ENTRYPOINT ["/server"]
