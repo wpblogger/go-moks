@@ -18,3 +18,4 @@ docker run --publish 8080:8080 other-mocks:latest
 
 ## Реализованные моки
 1. https://www.ooocis.ru/crv
+2. fastcheck
